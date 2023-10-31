@@ -1,23 +1,19 @@
 import React from 'react';
 import {
   BillContainer,
-  BillInput,
-  BillInputContainer,
   BillSelectionContainer,
   SelectTipContainer,
   SelectTipGrid,
   SelectTipItems,
   Title,
 } from './Bill.styled';
+import InputField from './InputField/InputField';
 
 export const Bill = () => {
   return (
     <BillContainer>
       <BillSelectionContainer>
-        <BillInputContainer>
-          <Title>Bill</Title>
-          <BillInput />
-        </BillInputContainer>
+        <InputField title="Bill" type="number" />
         <SelectTipContainer>
           <Title>Select Tip %</Title>
           <SelectTipGrid>
@@ -29,10 +25,7 @@ export const Bill = () => {
             <SelectTipItems>25%</SelectTipItems>
           </SelectTipGrid>
         </SelectTipContainer>
-        <BillInputContainer>
-          <Title>Number of People</Title>
-          <BillInput />
-        </BillInputContainer>
+        <InputField title="Number of People" type="number" />
       </BillSelectionContainer>
     </BillContainer>
   );
