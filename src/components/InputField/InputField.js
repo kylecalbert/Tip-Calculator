@@ -11,7 +11,7 @@ const InputField = ({ title, type, icon }) => {
     <BillInputContainer>
       <Title>{title}</Title>
       <IconContainer src={icon} />
-      <BillInput type={type} step={'number'} />
+      <BillInput type={type} step={'number'} defaultValue="0" />
     </BillInputContainer>
   );
 };

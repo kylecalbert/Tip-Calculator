@@ -12,6 +12,7 @@ export const BillContainer = styled.div`
 
 export const BillSelectionContainer = styled.div`
   display: grid;
+
   grid-template-rows: repeat(3, 1fr);
   gap: 2.5rem;
   width: 50%;
@@ -27,30 +28,29 @@ export const SelectTipContainer = styled.div`
 export const SelectTipGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
   background-color: green;
+  gap: 10px;
 `;
 
 export const SelectTipItems = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 0.5;
+  width: 5rem;
+  height: 1rem;
   background-color: ${colors.neutral.veryDarkCyan};
-  height: 2rem;
-  border-radius: 0.5rem;
+  border-radius: 0.3rem;
   padding: 1rem;
 `;
 
-export const IconContainer = styled.img`
+export const TipInput = styled.input`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
-  position: absolute;
-  box-sizing: border-box;
-  top: 50%;
-  left: 10px;
-  font-size: 25px;
-  transform: translateY(40%);
+  width: 5rem;
+  height: 1rem;
+  background-color: ${colors.neutral.veryLightGrayishCyan};
+  border-radius: 0.3rem;
+  border: none;
+  padding: 1rem;
 `;

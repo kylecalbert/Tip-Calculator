@@ -20,6 +20,8 @@ export const BillInput = styled.input`
   font-size: 1.5rem;
   font-weight: bold;
   width: 100%;
+  border-radius: 0.3rem;
+  border: none;
 `;
 export const IconContainer = styled.img`
   display: flex;
