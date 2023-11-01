@@ -1,12 +1,17 @@
 import React from 'react';
 
-import { BillInputContainer, Title, BillInput } from '../Bill.styled';
-
-const InputField = ({ title, type }) => {
+import {
+  BillInput,
+  Title,
+  BillInputContainer,
+  IconContainer,
+} from './InputField.styled';
+const InputField = ({ title, type, icon }) => {
   return (
     <BillInputContainer>
       <Title>{title}</Title>
-      <BillInput type={type} />
+      <IconContainer src={icon} />
+      <BillInput type={type} step={'number'} />
     </BillInputContainer>
   );
 };
