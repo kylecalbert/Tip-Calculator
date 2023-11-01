@@ -33,5 +33,5 @@ export const IconContainer = styled.img`
   top: 50%;
   left: 10px;
   font-size: 25px;
-  transform: translateY(40%);
+  transform: translateY(10%);
 `;

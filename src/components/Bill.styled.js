@@ -16,7 +16,7 @@ export const BillSelectionContainer = styled.div`
   grid-template-rows: repeat(3, 1fr);
   gap: 2.5rem;
   width: 50%;
-  background-color: yellow;
+  /* background-color: yellow; */
   padding: 0 16px 2px 2px;
 `;
 
@@ -28,7 +28,7 @@ export const SelectTipContainer = styled.div`
 export const SelectTipGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: green;
+  /* background-color: green; */
   gap: 10px;
 `;
 

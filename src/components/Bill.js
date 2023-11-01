@@ -11,6 +11,8 @@ import InputField from './InputField/InputField';
 import dollarSign from '../images/icon-dollar.svg';
 import personIcon from '../images/icon-person.svg';
 import { TipInput } from './Bill.styled';
+import { Text } from './Text/Text';
+import colors from './colors';
 export const Bill = () => {
   return (
     <BillContainer>
@@ -22,13 +24,25 @@ export const Bill = () => {
           icon={dollarSign}
         />
         <SelectTipContainer>
-          <div>Select Tip %</div>
+          <Text padding="0 0 10px 0" color={colors.neutral.darkGrayishCyan}>
+            Select Tip %
+          </Text>
           <SelectTipGrid>
-            <SelectTipItems>25%</SelectTipItems>
-            <SelectTipItems>25%</SelectTipItems>
-            <SelectTipItems>25%</SelectTipItems>
-            <SelectTipItems>25%</SelectTipItems>
-            <SelectTipItems>25%</SelectTipItems>
+            <SelectTipItems>
+              <Text size="1.5rem">5%</Text>
+            </SelectTipItems>
+            <SelectTipItems>
+              <Text size="1.5rem">10%</Text>
+            </SelectTipItems>
+            <SelectTipItems>
+              <Text size="1.5rem">15%</Text>
+            </SelectTipItems>
+            <SelectTipItems>
+              <Text size="1.5rem">20%</Text>
+            </SelectTipItems>
+            <SelectTipItems>
+              <Text size="1.5rem">25%</Text>
+            </SelectTipItems>
             <TipInput />
           </SelectTipGrid>
         </SelectTipContainer>
