@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 import colors from '../colors';
 
-export const BillInputContainer = styled.div`
+export const BillInputContainer = styled.form`
   display: flex;
   flex-direction: column;
   position: relative;
+`;
+export const ValidationContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const Title = styled.h3`
@@ -21,7 +25,12 @@ export const BillInput = styled.input`
   font-weight: bold;
   width: 100%;
   border-radius: 0.3rem;
-  border: none;
+  border: 2px solid ${(props) => (props.error ? colors.error : 'transparent')};
+
+  &:focus {
+    outline: ${(props) =>
+      props.error ? 'none' : `2px solid ${colors.primary}`};
+  }
 `;
 export const IconContainer = styled.img`
   display: flex;

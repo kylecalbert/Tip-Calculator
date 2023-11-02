@@ -46,7 +46,12 @@ export const Bill = () => {
             <TipInput />
           </SelectTipGrid>
         </SelectTipContainer>
-        <InputField title="Number of People" type="number" icon={personIcon} />
+        <InputField
+          placeholder="Custom"
+          title="Number of People"
+          type="number"
+          icon={personIcon}
+        />
       </BillSelectionContainer>
     </BillContainer>
   );

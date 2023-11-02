@@ -1,5 +1,6 @@
 const colors = {
   primary: 'hsl(172, 67%, 45%)',
+  error: 'hsl(0, 100%, 50%)',
   neutral: {
     veryDarkCyan: 'hsl(183, 100%, 15%)',
     darkGrayishCyan: 'hsl(186, 14%, 43%)',
