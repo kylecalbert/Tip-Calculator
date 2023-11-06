@@ -24,7 +24,7 @@ const InputField = ({ title, type, icon }) => {
     setSubmitted(true);
 
     if (inputValue === '0' || inputValue === '') {
-      setError('Cannot be Zero');
+      setError('Cannot be Zero or Empty');
     } else {
       setError('');
     }

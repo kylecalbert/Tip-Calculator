@@ -5,7 +5,6 @@ import {
   SelectTipContainer,
   SelectTipGrid,
   SelectTipItems,
-  Title,
 } from './Bill.styled';
 import InputField from '../InputField/InputField';
 import dollarSign from '../../images/icon-dollar.svg';
@@ -20,7 +19,7 @@ export const Bill = () => {
       <BillSelectionContainer>
         <InputField
           title="Bill"
-          defaultValue="0"
+          placeholder={'0'}
           type="number"
           icon={dollarSign}
         />
