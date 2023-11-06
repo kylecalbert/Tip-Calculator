@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from '../colors';
 
-export const BillInputContainer = styled.form`
+export const StyledInputContainer = styled.form`
   display: flex;
   flex-direction: column;
   position: relative;
@@ -16,7 +16,7 @@ export const Title = styled.h3`
   margin-bottom: 0.5rem;
 `;
 
-export const BillInput = styled.input`
+export const StyledInput = styled.input`
   display: flex;
   height: 3rem;
   background: ${colors.neutral.veryLightGrayishCyan};
@@ -42,5 +42,5 @@ export const IconContainer = styled.img`
   top: 50%;
   left: 10px;
   font-size: 25px;
-  transform: translateY(10%);
+  margin-top: 0.25rem;
 `;

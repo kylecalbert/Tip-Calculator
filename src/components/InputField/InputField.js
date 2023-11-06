@@ -3,6 +3,8 @@ import {
   BillInput,
   BillInputContainer,
   IconContainer,
+  StyledInput,
+  StyledInputContainer,
   ValidationContainer,
 } from './InputField.styled';
 import { Text } from '../Text/Text';
@@ -29,7 +31,7 @@ const InputField = ({ title, type, icon }) => {
   };
 
   return (
-    <BillInputContainer onSubmit={handleSubmit}>
+    <StyledInputContainer onSubmit={handleSubmit}>
       <ValidationContainer>
         <Text padding="0 0 10px 0" color={colors.neutral.darkGrayishCyan}>
           {title}
@@ -41,15 +43,13 @@ const InputField = ({ title, type, icon }) => {
         )}
       </ValidationContainer>
       <IconContainer src={icon} />
-      <BillInput
-        placeholder="Custom"
+      <StyledInput
+        placeholder="0"
         type={type}
-        step={'number'}
-        defaultValue="0"
         onChange={handleInputChange}
         error={submitted && Boolean(error)}
       />
-    </BillInputContainer>
+    </StyledInputContainer>
   );
 };
 

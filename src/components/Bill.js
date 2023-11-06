@@ -43,7 +43,7 @@ export const Bill = () => {
             <SelectTipItems>
               <Text size="1.5rem">25%</Text>
             </SelectTipItems>
-            <TipInput />
+            <TipInput placeholder="Custom" />
           </SelectTipGrid>
         </SelectTipContainer>
         <InputField

@@ -3,3 +3,7 @@
 .App {
   text-align: center;
 }
+
+input {
+  font-family: 'Space Mono', monospace;
+}
