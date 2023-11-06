@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import {
-  BillInput,
-  BillInputContainer,
   IconContainer,
   StyledInput,
   StyledInputContainer,

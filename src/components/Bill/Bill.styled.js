@@ -28,15 +28,16 @@ export const SelectTipContainer = styled.div`
 export const SelectTipGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /* background-color: green; */
   gap: 10px;
+
+  /* background-color: green; */
 `;
 
 export const SelectTipItems = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 7.5rem;
+  width: 100%;
   height: 3rem;
   background-color: ${colors.neutral.veryDarkCyan};
   border-radius: 0.3rem;
@@ -48,11 +49,14 @@ export const TipInput = styled.input`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5rem;
+  width: 100%;
   height: 1rem;
   font-size: 1.2rem;
   background-color: ${colors.neutral.veryLightGrayishCyan};
   border-radius: 0.3rem;
   border: none;
-  padding: 1rem;
+  padding: 1rem 0 1rem 0;
+  ::placeholder {
+    margin-left: 10rem;
+  }
 `;
