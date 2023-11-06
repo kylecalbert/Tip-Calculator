@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import colors from './colors';
+import colors from '../colors';
 
 export const BillContainer = styled.div`
   display: flex;
@@ -32,14 +32,15 @@ export const SelectTipGrid = styled.div`
   gap: 10px;
 `;
 
-export const SelectTipItems = styled.div`
+export const SelectTipItems = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 5rem;
-  height: 1rem;
+  width: 7.5rem;
+  height: 3rem;
   background-color: ${colors.neutral.veryDarkCyan};
   border-radius: 0.3rem;
+  border: none;
   padding: 1rem;
 `;
 
@@ -49,6 +50,7 @@ export const TipInput = styled.input`
   justify-content: center;
   width: 5rem;
   height: 1rem;
+  font-size: 1.2rem;
   background-color: ${colors.neutral.veryLightGrayishCyan};
   border-radius: 0.3rem;
   border: none;

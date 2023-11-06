@@ -7,12 +7,13 @@ import {
   SelectTipItems,
   Title,
 } from './Bill.styled';
-import InputField from './InputField/InputField';
-import dollarSign from '../images/icon-dollar.svg';
-import personIcon from '../images/icon-person.svg';
+import InputField from '../InputField/InputField';
+import dollarSign from '../../images/icon-dollar.svg';
+import personIcon from '../../images/icon-person.svg';
 import { TipInput } from './Bill.styled';
-import { Text } from './Text/Text';
-import colors from './colors';
+import { Text } from '../Text/Text';
+import colors from '../colors';
+
 export const Bill = () => {
   return (
     <BillContainer>
