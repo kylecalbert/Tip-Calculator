@@ -1,10 +1,11 @@
 import styled from 'styled-components';
-import colors from '../colors';
+import colors from '../colors/colors';
 
 export const BillContainer = styled.div`
   display: flex;
   background: ${colors.neutral.white};
-  width: 60rem;
+  width: 50rem;
+
   height: 25rem;
   border-radius: 2rem;
   padding: 4rem;
@@ -47,8 +48,10 @@ export const SelectTipItems = styled.button`
 
 export const TipInput = styled.input`
   display: flex;
-  align-items: center;
-  justify-content: center;
+
+  text-align: right;
+  font-size: 1.5rem;
+  font-weight: bold;
   width: 100%;
   height: 1rem;
   font-size: 1.2rem;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import colors from '../colors';
+import colors from '../colors/colors';
 const StyledText = styled.div`
   color: ${(props) => props.color || colors.neutral.white};
   font-size: ${(props) => props.size || '1rem'};

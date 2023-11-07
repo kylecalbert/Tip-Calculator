@@ -11,8 +11,8 @@ import dollarSign from '../../images/icon-dollar.svg';
 import personIcon from '../../images/icon-person.svg';
 import { TipInput } from './Bill.styled';
 import { Text } from '../Text/Text';
-import colors from '../colors';
-
+import colors from '../colors/colors';
+import { sizes } from './sizes/sizes';
 export const Bill = () => {
   return (
     <BillContainer>
@@ -29,19 +29,19 @@ export const Bill = () => {
           </Text>
           <SelectTipGrid>
             <SelectTipItems>
-              <Text size="1.5rem">5%</Text>
+              <Text size={sizes.small}>5%</Text>
             </SelectTipItems>
             <SelectTipItems>
-              <Text size="1.5rem">10%</Text>
+              <Text size={sizes.small}>10%</Text>
             </SelectTipItems>
             <SelectTipItems>
-              <Text size="1.5rem">15%</Text>
+              <Text size={sizes.small}>15%</Text>
             </SelectTipItems>
             <SelectTipItems>
-              <Text size="1.5rem">20%</Text>
+              <Text size={sizes.small}>20%</Text>
             </SelectTipItems>
             <SelectTipItems>
-              <Text size="1.5rem">25%</Text>
+              <Text size={sizes.small}>25%</Text>
             </SelectTipItems>
             <TipInput placeholder="Custom" />
           </SelectTipGrid>
