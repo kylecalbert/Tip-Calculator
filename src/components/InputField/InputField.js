@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   IconContainer,
   StyledInput,
@@ -7,36 +7,36 @@ import {
 } from './InputField.styled';
 import { Text } from '../Text/Text';
 import colors from '../colors/colors';
-
+import { BillContext } from '../BillContext/BillContext';
 const InputField = ({ title, type, icon, amount }) => {
-  const [inputValue, setInputValue] = useState('');
+  const { setBill, setPerson } = useContext(BillContext);
+
   const [error, setError] = useState('');
-  const [submitted, setSubmitted] = useState(false);
 
-  ///updating state of the input value
   const handleInputChange = (e) => {
-    setInputValue(e.target.value);
-  };
+    const inputValue = e.target.value;
 
-  ///on enter click set submit to true, to show item has been clicked
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
+    if (title === 'Bill') {
+      setBill(inputValue);
+    }
+    if (title === 'Number of People') {
+      setPerson(inputValue);
+    }
 
-    if (inputValue === '0' || inputValue === '') {
-      setError('Cannot be Zero or Empty');
+    if (inputValue === '0') {
+      setError('Cannot be Zero');
     } else {
       setError('');
     }
   };
 
   return (
-    <StyledInputContainer onSubmit={handleSubmit}>
+    <StyledInputContainer>
       <ValidationContainer>
         <Text padding="0 0 10px 0" color={colors.neutral.darkGrayishCyan}>
           {title}
         </Text>
-        {submitted && error && (
+        {error && (
           <Text padding="0 0 10px 0" color={colors.error}>
             {error}
           </Text>
@@ -47,7 +47,7 @@ const InputField = ({ title, type, icon, amount }) => {
         placeholder="0"
         type={type}
         onChange={handleInputChange}
-        error={submitted && Boolean(error)}
+        error={Boolean(error)}
       />
     </StyledInputContainer>
   );

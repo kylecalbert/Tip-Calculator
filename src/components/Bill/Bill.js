@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import {
   BillContainer,
   BillSelectionContainer,
@@ -14,16 +14,7 @@ import { Text } from '../Text/Text';
 import colors from '../colors/colors';
 import { sizes } from './sizes/sizes';
 
-///put these in context
-/// state for number of people
-//state for bill input
-//put numebr instead of string in usetstae
-
-//create new branch
 export const Bill = () => {
-  const [People, setPeople] = useState('');
-  const [bill, setBill] = useState('');
-
   return (
     <BillContainer>
       <BillSelectionContainer>
@@ -32,7 +23,6 @@ export const Bill = () => {
           placeholder={'0'}
           type="number"
           icon={dollarSign}
-          amount={bill}
         />
         <SelectTipContainer>
           <Text padding="0 0 10px 0" color={colors.neutral.darkGrayishCyan}>
@@ -61,7 +51,6 @@ export const Bill = () => {
           placeholder="Custom"
           title="Number of People"
           type="number"
-          amount={People}
           icon={personIcon}
         />
       </BillSelectionContainer>
