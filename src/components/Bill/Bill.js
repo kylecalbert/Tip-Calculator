@@ -24,7 +24,6 @@ export const Bill = () => {
     useContext(BillContext);
 
   const handleButtonClick = (percentage) => {
-    console.log('button clicked');
     setSelectedButton(percentage);
   };
   console.log(customTip);
@@ -48,6 +47,7 @@ export const Bill = () => {
                 onClick={() => {
                   handleButtonClick(percentage);
                 }}
+                isSelected={selectedButton === percentage}
                 key={percentage}
               >
                 <Text size={sizes.small}>{percentage}%</Text>
