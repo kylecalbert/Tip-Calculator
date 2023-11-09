@@ -6,21 +6,35 @@ import {
   SelectTipGrid,
   SelectTipItems,
 } from './Bill.styled';
-import InputField from '../InputField/InputField';
+import { InputField } from '../InputField/InputField';
 import dollarSign from '../../images/icon-dollar.svg';
 import personIcon from '../../images/icon-person.svg';
-import { TipInput } from './Bill.styled';
+import { CustomTipInput } from './Bill.styled';
 import { Text } from '../Text/Text';
 import colors from '../colors/colors';
-import { sizes } from './sizes/sizes';
+import { sizes } from '../sizes/sizes';
+import { BillContext } from '../BillContext/BillContext';
+///put the numbers in an array and loop through the array.
 
 export const Bill = () => {
+  const tipPercentages = [5, 10, 15, 20, 25]; ///adding an arrya so values can be dynamic and updated easily
+  //previously i as adding mutliple tip grid items which used up lots of unnesary code space
+
+  const { selectedButton, setSelectedButton, setCustomTip } =
+    useContext(BillContext);
+
+  const handleButtonClick = (percentage) => {
+    console.log('button clicked');
+    setSelectedButton(percentage);
+  };
+  console.log(selectedButton);
+
   return (
     <BillContainer>
       <BillSelectionContainer>
         <InputField
           title="Bill"
-          placeholder={'0'}
+          placeholder="0"
           type="number"
           icon={dollarSign}
         />
@@ -29,29 +43,27 @@ export const Bill = () => {
             Select Tip %
           </Text>
           <SelectTipGrid>
-            <SelectTipItems>
-              <Text size={sizes.small}>5%</Text>
-            </SelectTipItems>
-            <SelectTipItems>
-              <Text size={sizes.small}>10%</Text>
-            </SelectTipItems>
-            <SelectTipItems>
-              <Text size={sizes.small}>15%</Text>
-            </SelectTipItems>
-            <SelectTipItems>
-              <Text size={sizes.small}>20%</Text>
-            </SelectTipItems>
-            <SelectTipItems>
-              <Text size={sizes.small}>25%</Text>
-            </SelectTipItems>
-            <TipInput placeholder="Custom" />
+            {tipPercentages.map((percentage) => (
+              <SelectTipItems
+                onClick={() => {
+                  handleButtonClick(percentage);
+                }}
+                key={percentage}
+              >
+                <Text size={sizes.small}>{percentage}%</Text>
+              </SelectTipItems>
+            ))}
+            <CustomTipInput placeholder="Custom" />
           </SelectTipGrid>
         </SelectTipContainer>
         <InputField
-          placeholder="Custom"
+          placeholder="0"
           title="Number of People"
           type="number"
           icon={personIcon}
+          onChange={(e) => {
+            setCustomTip(e.target.value);
+          }}
         />
       </BillSelectionContainer>
     </BillContainer>

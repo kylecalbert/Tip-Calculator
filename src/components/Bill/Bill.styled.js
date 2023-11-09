@@ -46,7 +46,7 @@ export const SelectTipItems = styled.button`
   padding: 1rem;
 `;
 
-export const TipInput = styled.input`
+export const CustomTipInput = styled.input`
   display: flex;
 
   text-align: right;

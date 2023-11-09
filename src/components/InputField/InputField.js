@@ -8,7 +8,7 @@ import {
 import { Text } from '../Text/Text';
 import colors from '../colors/colors';
 import { BillContext } from '../BillContext/BillContext';
-const InputField = ({ title, type, icon, amount }) => {
+export const InputField = ({ title, type, icon }) => {
   const { setBill, setPerson } = useContext(BillContext);
 
   const [error, setError] = useState('');
@@ -52,5 +52,3 @@ const InputField = ({ title, type, icon, amount }) => {
     </StyledInputContainer>
   );
 };
-
-export default InputField;
