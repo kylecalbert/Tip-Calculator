@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import {
   BillContainer,
   BillSelectionContainer,
@@ -20,14 +20,14 @@ export const Bill = () => {
   const tipPercentages = [5, 10, 15, 20, 25]; ///adding an arrya so values can be dynamic and updated easily
   //previously i as adding mutliple tip grid items which used up lots of unnesary code space
 
-  const { selectedButton, setSelectedButton, setCustomTip } =
+  const { selectedButton, setSelectedButton, customTip, setCustomTip } =
     useContext(BillContext);
 
   const handleButtonClick = (percentage) => {
     console.log('button clicked');
     setSelectedButton(percentage);
   };
-  console.log(selectedButton);
+  console.log(customTip);
 
   return (
     <BillContainer>
@@ -53,7 +53,10 @@ export const Bill = () => {
                 <Text size={sizes.small}>{percentage}%</Text>
               </SelectTipItems>
             ))}
-            <CustomTipInput placeholder="Custom" />
+            <CustomTipInput
+              placeholder="Custom"
+              onChange={(e) => setCustomTip(e.target.value)}
+            />
           </SelectTipGrid>
         </SelectTipContainer>
         <InputField
@@ -61,9 +64,6 @@ export const Bill = () => {
           title="Number of People"
           type="number"
           icon={personIcon}
-          onChange={(e) => {
-            setCustomTip(e.target.value);
-          }}
         />
       </BillSelectionContainer>
     </BillContainer>
