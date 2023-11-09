@@ -7,6 +7,7 @@ export const BillProvider = ({ children }) => {
   const [person, setPerson] = useState(0);
   const [selectedButton, setSelectedButton] = useState(0);
   const [customTip, setCustomTip] = useState(0);
+  const [tip, setTip] = useState(0);
 
   return (
     <BillContext.Provider
@@ -19,6 +20,8 @@ export const BillProvider = ({ children }) => {
         setSelectedButton,
         customTip,
         setCustomTip,
+        setTip,
+        tip,
       }}
     >
       {children}

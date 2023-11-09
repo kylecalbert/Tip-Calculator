@@ -20,13 +20,28 @@ export const Bill = () => {
   const tipPercentages = [5, 10, 15, 20, 25]; ///adding an arrya so values can be dynamic and updated easily
   //previously i as adding mutliple tip grid items which used up lots of unnesary code space
 
-  const { selectedButton, setSelectedButton, customTip, setCustomTip } =
-    useContext(BillContext);
+  const {
+    selectedButton,
+    setSelectedButton,
+
+    setCustomTip,
+    setTip,
+    tip,
+  } = useContext(BillContext);
 
   const handleButtonClick = (percentage) => {
-    setSelectedButton(percentage);
+    if (selectedButton === percentage) {
+      setSelectedButton(0);
+      setTip(0);
+      setCustomTip('');
+    } else {
+      setSelectedButton(percentage);
+      setTip(percentage);
+      setCustomTip('');
+    }
   };
-  console.log(customTip);
+
+  console.log(tip);
 
   return (
     <BillContainer>
@@ -44,9 +59,7 @@ export const Bill = () => {
           <SelectTipGrid>
             {tipPercentages.map((percentage) => (
               <SelectTipItems
-                onClick={() => {
-                  handleButtonClick(percentage);
-                }}
+                onClick={() => handleButtonClick(percentage)}
                 isSelected={selectedButton === percentage}
                 key={percentage}
               >
@@ -55,7 +68,11 @@ export const Bill = () => {
             ))}
             <CustomTipInput
               placeholder="Custom"
-              onChange={(e) => setCustomTip(e.target.value)}
+              onChange={(e) => {
+                setCustomTip(e.target.value);
+                setTip(e.target.value);
+              }}
+              disabled={selectedButton !== 0}
             />
           </SelectTipGrid>
         </SelectTipContainer>
