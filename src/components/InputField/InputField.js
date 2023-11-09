@@ -8,7 +8,7 @@ import {
 import { Text } from '../Text/Text';
 import colors from '../colors/colors';
 
-const InputField = ({ title, type, icon }) => {
+const InputField = ({ title, type, icon, amount }) => {
   const [inputValue, setInputValue] = useState('');
   const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(false);
