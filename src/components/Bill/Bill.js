@@ -23,6 +23,7 @@ export const Bill = () => {
   const {
     selectedButton,
     setSelectedButton,
+    customTip,
 
     setCustomTip,
     setTip,
@@ -32,12 +33,10 @@ export const Bill = () => {
   const handleButtonClick = (percentage) => {
     if (selectedButton === percentage) {
       setSelectedButton(0);
-      setTip(0);
-      setCustomTip('');
+      setTip(customTip);
     } else {
       setSelectedButton(percentage);
       setTip(percentage);
-      setCustomTip('');
     }
   };
 
