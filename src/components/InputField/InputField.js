@@ -8,6 +8,7 @@ import {
 import { Text } from '../Text/Text';
 import colors from '../colors/colors';
 import { BillContext } from '../BillContext/BillContext';
+
 export const InputField = ({ title, type, icon }) => {
   const { setBill, setPerson } = useContext(BillContext);
 
@@ -48,6 +49,7 @@ export const InputField = ({ title, type, icon }) => {
         type={type}
         onChange={handleInputChange}
         error={Boolean(error)}
+        data-testid="input-field"
       />
     </StyledInputContainer>
   );
