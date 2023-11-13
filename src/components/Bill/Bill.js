@@ -24,7 +24,6 @@ export const Bill = () => {
     selectedButton,
     setSelectedButton,
     customTip,
-
     setCustomTip,
     setTip,
     tip,
@@ -39,6 +38,8 @@ export const Bill = () => {
       setTip(percentage);
     }
   };
+
+  console.log('tip');
 
   console.log(tip);
 
@@ -67,6 +68,7 @@ export const Bill = () => {
             ))}
             <CustomTipInput
               placeholder="Custom"
+              type={'number'}
               onChange={(e) => {
                 setCustomTip(e.target.value);
                 setTip(e.target.value);
