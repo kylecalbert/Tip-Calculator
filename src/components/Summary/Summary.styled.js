@@ -19,7 +19,7 @@ export const TopContainer = styled.div`
   flex-direction: column;
   width: 80%;
   height: 50%;
-  background-color: red;
+  /* background-color: red; */
   margin-top: 2rem;
 `;
 

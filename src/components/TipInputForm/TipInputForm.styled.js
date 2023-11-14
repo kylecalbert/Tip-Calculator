@@ -9,7 +9,7 @@ export const TipInputFormContainer = styled.div`
   background-color: yellow;
   padding: 0 16px 2px 2px;
   @media (max-width: 768px) {
-    width: 100%;
+    width: 70%;
     gap: 0;
   }
 `;

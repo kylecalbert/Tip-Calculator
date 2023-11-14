@@ -13,10 +13,12 @@ export const TipCalculatorContainer = styled.div`
   padding: 4rem;
 
   @media (max-width: 768px) {
-    width: 30rem;
     display: flex;
+    background-color: white;
     flex-direction: column;
-    height: 50rem;
+
+    width: 100%;
+    height: 100%;
     align-items: center;
   }
 `;
