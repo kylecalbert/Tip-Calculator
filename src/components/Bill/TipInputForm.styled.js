@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import colors from '../colors/colors';
 
-export const BillContainer = styled.div`
+export const TipCalculatorContainer = styled.div`
   display: flex;
   background: ${colors.neutral.white};
   width: 50rem;
@@ -11,7 +11,7 @@ export const BillContainer = styled.div`
   padding: 4rem;
 `;
 
-export const BillSelectionContainer = styled.div`
+export const TipInputFormContainer = styled.div`
   display: grid;
 
   grid-template-rows: repeat(3, 1fr);

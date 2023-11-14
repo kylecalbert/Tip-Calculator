@@ -1,10 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import {
-  BillContainer,
-  BillSelectionContainer,
+  TipCalculatorContainer,
   SelectTipContainer,
   SelectTipGrid,
   SelectTipItems,
+  TipInputFormContainer,
 } from './TipInputForm.styled';
 import { InputField } from '../InputField/InputField';
 import dollarSign from '../../images/icon-dollar.svg';
@@ -19,35 +19,34 @@ export const TipInputForm = () => {
   const tipPercentages = [5, 10, 15, 20, 25]; ///adding an arrya so values can be dynamic and updated easily
   //previously i as adding mutliple tip grid items which used up lots of unnesary code space
 
-  const {
-    selectedButton,
-    setSelectedButton,
-    customTip,
-    setCustomTip,
-    setTip,
-    tip,
-  } = useContext(TipCalculatorContext);
+  const { customTip, setCustomTip, setTip, tip } =
+    useContext(TipCalculatorContext);
 
   ///if tip! = 0  disable button
   ///if tip = 0 enable
 
   const handleButtonClick = (percentage) => {
-    if (selectedButton === percentage) {
-      setSelectedButton(0);
-      setTip(customTip);
+    if (customTip !== 0) {
+      setCustomTip(0);
+    }
+
+    if (tip === percentage) {
+      setTip(0);
     } else {
-      setSelectedButton(percentage);
       setTip(percentage);
     }
   };
 
-  console.log('tip');
+  console.log('tip', tip);
+  console.log('custom tip', customTip);
 
-  console.log(tip);
+  const handleOnChange = (e) => {
+    setCustomTip(e.target.value);
+  };
 
   return (
-    <BillContainer>
-      <BillSelectionContainer>
+    <TipCalculatorContainer>
+      <TipInputFormContainer>
         <InputField
           title="Bill"
           placeholder="0"
@@ -62,7 +61,7 @@ export const TipInputForm = () => {
             {tipPercentages.map((percentage) => (
               <SelectTipItems
                 onClick={() => handleButtonClick(percentage)}
-                isSelected={selectedButton === percentage}
+                isSelected={tip === percentage}
                 key={percentage}
               >
                 <Text size={sizes.small}>{percentage}%</Text>
@@ -71,11 +70,8 @@ export const TipInputForm = () => {
             <CustomTipInput
               placeholder="Custom"
               type="number"
-              onChange={(e) => {
-                setCustomTip(e.target.value);
-                setTip(Number(e.target.value));
-              }}
-              disabled={selectedButton !== 0}
+              onChange={(e) => handleOnChange(e)}
+              disabled={tip !== 0}
             />
           </SelectTipGrid>
         </SelectTipContainer>
@@ -85,8 +81,8 @@ export const TipInputForm = () => {
           type="number"
           icon={personIcon}
         />
-      </BillSelectionContainer>
-    </BillContainer>
+      </TipInputFormContainer>
+    </TipCalculatorContainer>
   );
 };
 
