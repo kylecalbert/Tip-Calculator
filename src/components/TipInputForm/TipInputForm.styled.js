@@ -5,12 +5,13 @@ export const TipInputFormContainer = styled.div`
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   gap: 2.5rem;
-  width: 50%;
-  background-color: yellow;
+  width: 90%;
+  background-color: purple;
   padding: 0 16px 2px 2px;
+
   @media (max-width: 768px) {
-    width: 70%;
-    gap: 0;
+    width: 27rem;
+    gap: 1rem;
   }
 `;
 

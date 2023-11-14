@@ -5,11 +5,13 @@ export const SummaryContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 90vw;
   background-color: ${colors.neutral.veryDarkCyan};
   border-radius: 1rem;
+
   @media (max-width: 768px) {
-    width: 100%;
+    width: 90vw;
+    height: auto;
     gap: 0;
   }
 `;
@@ -19,7 +21,7 @@ export const TopContainer = styled.div`
   flex-direction: column;
   width: 80%;
   height: 50%;
-  /* background-color: red; */
+  background-color: red;
   margin-top: 2rem;
 `;
 

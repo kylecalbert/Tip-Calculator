@@ -5,7 +5,8 @@ import { TipInputForm } from '../TipInputForm/TipInputForm';
 import { Summary } from '../Summary/Summary';
 export const TipCalculatorContainer = styled.div`
   display: flex;
-  background: ${colors.neutral.white};
+
+  background: blue;
   width: 50rem;
 
   height: 25rem;
@@ -14,10 +15,9 @@ export const TipCalculatorContainer = styled.div`
 
   @media (max-width: 768px) {
     display: flex;
-    background-color: white;
-    flex-direction: column;
 
-    width: 100%;
+    flex-direction: column;
+    width: 100vw;
     height: 100%;
     align-items: center;
   }
