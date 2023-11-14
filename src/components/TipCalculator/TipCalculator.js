@@ -8,18 +8,18 @@ export const TipCalculatorContainer = styled.div`
 
   background: blue;
   width: 50rem;
-
   height: 25rem;
   border-radius: 2rem;
   padding: 4rem;
 
   @media (max-width: 768px) {
     display: flex;
-
     flex-direction: column;
-    width: 100vw;
+    width: 100%;
     height: 100%;
     align-items: center;
+    padding: 1rem;
+    margin-left: 1rem;
   }
 `;
 

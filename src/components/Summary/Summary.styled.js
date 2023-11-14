@@ -5,7 +5,7 @@ export const SummaryContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90vw;
+  width: 100%;
   background-color: ${colors.neutral.veryDarkCyan};
   border-radius: 1rem;
 

@@ -6,12 +6,12 @@ export const TipInputFormContainer = styled.div`
   grid-template-rows: repeat(3, 1fr);
   gap: 2.5rem;
   width: 90%;
-  background-color: purple;
+  background-color: yellow;
   padding: 0 16px 2px 2px;
 
   @media (max-width: 768px) {
-    width: 27rem;
-    gap: 1rem;
+    width: 90%;
+    gap: 1rem; /* Adjusted the gap for mobile screens */
   }
 `;
 
@@ -19,7 +19,6 @@ export const SelectTipContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  background-color: blue;
 `;
 
 export const SelectTipGrid = styled.div`

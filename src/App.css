@@ -7,3 +7,8 @@
 input {
   font-family: 'Space Mono', monospace;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+}
