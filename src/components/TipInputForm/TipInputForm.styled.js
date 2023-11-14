@@ -11,7 +11,7 @@ export const TipInputFormContainer = styled.div`
 
   @media (max-width: 768px) {
     width: 90%;
-    gap: 1rem; /* Adjusted the gap for mobile screens */
+    gap: 1rem;
   }
 `;
 
