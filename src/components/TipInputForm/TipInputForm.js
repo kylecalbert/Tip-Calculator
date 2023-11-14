@@ -22,26 +22,19 @@ export const TipInputForm = () => {
   const { customTip, setCustomTip, setTip, tip } =
     useContext(TipCalculatorContext);
 
-  ///if tip! = 0  disable button
-  ///if tip = 0 enable
-
   const handleButtonClick = (percentage) => {
     if (customTip !== 0) {
       setCustomTip(0);
     }
-
-    if (tip === percentage) {
-      setTip(0);
-    } else {
-      setTip(percentage);
-    }
+    setTip(percentage);
   };
 
-  console.log('tip', tip);
   console.log('custom tip', customTip);
-
   const handleOnChange = (e) => {
-    setCustomTip(e.target.value);
+    if (tip !== 0) {
+      setTip(0);
+    }
+    setCustomTip(Number(e.target.value));
   };
 
   return (
@@ -70,7 +63,7 @@ export const TipInputForm = () => {
             placeholder="Custom"
             type="number"
             onChange={(e) => handleOnChange(e)}
-            disabled={tip !== 0}
+            value={customTip ? customTip : ''}
           />
         </SelectTipGrid>
       </SelectTipContainer>
@@ -83,9 +76,3 @@ export const TipInputForm = () => {
     </TipInputFormContainer>
   );
 };
-
-////do calculationof the tip amount per person is
-
-///tip per person = bill amount x tip percentage / number of people
-
-///place the data in a context

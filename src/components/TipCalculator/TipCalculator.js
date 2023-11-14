@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import colors from '../colors/colors';
 import { TipInputForm } from '../TipInputForm/TipInputForm';
-
+import { Summary } from '../Summary/Summary';
 export const TipCalculatorContainer = styled.div`
   display: flex;
   background: ${colors.neutral.white};
@@ -17,6 +17,7 @@ const TipCalculator = () => {
   return (
     <TipCalculatorContainer>
       <TipInputForm />
+      <Summary />
     </TipCalculatorContainer>
   );
 };
