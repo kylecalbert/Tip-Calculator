@@ -5,18 +5,17 @@ import {
   SelectTipContainer,
   SelectTipGrid,
   SelectTipItems,
-} from './Bill.styled';
+} from './TipInputForm.styled';
 import { InputField } from '../InputField/InputField';
 import dollarSign from '../../images/icon-dollar.svg';
 import personIcon from '../../images/icon-person.svg';
-import { CustomTipInput } from './Bill.styled';
+import { CustomTipInput } from './TipInputForm.styled';
 import { Text } from '../Text/Text';
 import colors from '../colors/colors';
 import { sizes } from '../sizes/sizes';
-import { BillContext } from '../BillContext/BillContext';
-///put the numbers in an array and loop through the array.
+import { TipCalculatorContext } from '../TipCalculatorContext/TipCalculatorContext';
 
-export const Bill = () => {
+export const TipInputForm = () => {
   const tipPercentages = [5, 10, 15, 20, 25]; ///adding an arrya so values can be dynamic and updated easily
   //previously i as adding mutliple tip grid items which used up lots of unnesary code space
 
@@ -27,7 +26,10 @@ export const Bill = () => {
     setCustomTip,
     setTip,
     tip,
-  } = useContext(BillContext);
+  } = useContext(TipCalculatorContext);
+
+  ///if tip! = 0  disable button
+  ///if tip = 0 enable
 
   const handleButtonClick = (percentage) => {
     if (selectedButton === percentage) {
@@ -68,10 +70,10 @@ export const Bill = () => {
             ))}
             <CustomTipInput
               placeholder="Custom"
-              type={'number'}
+              type="number"
               onChange={(e) => {
                 setCustomTip(e.target.value);
-                setTip(e.target.value);
+                setTip(Number(e.target.value));
               }}
               disabled={selectedButton !== 0}
             />

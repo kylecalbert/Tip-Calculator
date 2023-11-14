@@ -1,14 +1,14 @@
 import './App.css';
-import { Bill } from './components/Bill/Bill';
+import { Bill } from './components/Bill/TipInputForm';
 import { AppContainer } from './App.styled';
-import { BillProvider } from './components/BillContext/BillContext';
-
+import { TipCalculatorProvider } from './components/TipCalculatorContext/TipCalculatorContext';
+import { TipInputForm } from './components/Bill/TipInputForm';
 function App() {
   return (
     <AppContainer>
-      <BillProvider>
-        <Bill />
-      </BillProvider>
+      <TipCalculatorProvider>
+        <TipInputForm />
+      </TipCalculatorProvider>
     </AppContainer>
   );
 }

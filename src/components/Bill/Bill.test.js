@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import { Bill } from './Bill';
-import { BillContext } from '../BillContext/BillContext';
+import { Bill } from './TipInputForm';
+import { TipCalculatorContext } from '../TipCalculatorContext/TipCalculatorContext';
 
 const renderBill = (props) => {
   const setCustomTip = jest.fn();
@@ -9,9 +9,11 @@ const renderBill = (props) => {
   const setSelectedButton = jest.fn();
 
   render(
-    <BillContext.Provider value={{ setCustomTip, setTip, setSelectedButton }}>
+    <TipCalculatorContext.Provider
+      value={{ setCustomTip, setTip, setSelectedButton, tip: 0 }}
+    >
       <Bill />
-    </BillContext.Provider>
+    </TipCalculatorContext.Provider>
   );
 
   return { setTip, setCustomTip, setSelectedButton };
@@ -38,7 +40,7 @@ describe('Bill Component', () => {
   it('should update customTip to the custom value entered', () => {
     const { setCustomTip } = renderBill();
     const customInput = screen.getByPlaceholderText('Custom');
-    fireEvent.change(customInput, { target: { value: Number(25) } });
+    fireEvent.change(customInput, { target: { value: 25 } });
 
     expect(setCustomTip).toHaveBeenCalledWith(25); ///not sure why this is not working?
   });

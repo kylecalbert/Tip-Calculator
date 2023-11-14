@@ -1,21 +1,21 @@
 import React, { createContext, useState } from 'react';
 
-export const BillContext = createContext();
+export const TipCalculatorContext = createContext();
 
-export const BillProvider = ({ children }) => {
+export const TipCalculatorProvider = ({ children }) => {
   const [bill, setBill] = useState(0);
-  const [person, setPerson] = useState(0);
+  const [noOfPersons, setNoOfPersons] = useState(0);
   const [selectedButton, setSelectedButton] = useState(0);
   const [customTip, setCustomTip] = useState(0);
   const [tip, setTip] = useState(0);
 
   return (
-    <BillContext.Provider
+    <TipCalculatorContext.Provider
       value={{
         bill,
         setBill,
-        person,
-        setPerson,
+        noOfPersons,
+        setNoOfPersons,
         selectedButton,
         setSelectedButton,
         customTip,
@@ -25,6 +25,6 @@ export const BillProvider = ({ children }) => {
       }}
     >
       {children}
-    </BillContext.Provider>
+    </TipCalculatorContext.Provider>
   );
 };

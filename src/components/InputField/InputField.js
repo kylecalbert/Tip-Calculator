@@ -7,10 +7,10 @@ import {
 } from './InputField.styled';
 import { Text } from '../Text/Text';
 import colors from '../colors/colors';
-import { BillContext } from '../BillContext/BillContext';
+import { TipCalculatorContext } from '../TipCalculatorContext/TipCalculatorContext';
 
 export const InputField = ({ title, type, icon }) => {
-  const { setBill, setPerson } = useContext(BillContext);
+  const { setBill, setNoOfPersons } = useContext(TipCalculatorContext);
 
   const [error, setError] = useState('');
 
@@ -21,7 +21,7 @@ export const InputField = ({ title, type, icon }) => {
       setBill(inputValue);
     }
     if (title === 'Number of People') {
-      setPerson(inputValue);
+      setNoOfPersons(inputValue);
     }
 
     if (inputValue === '0') {
