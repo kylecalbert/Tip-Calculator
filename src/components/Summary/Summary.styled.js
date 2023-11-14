@@ -6,7 +6,8 @@ export const SummaryContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 50%;
-  background-color: yellow;
+  background-color: ${colors.neutral.veryDarkCyan};
+  border-radius: 1rem;
 `;
 
 export const TopContainer = styled.div`
@@ -29,8 +30,11 @@ export const TitleContainer = styled.div`
 `;
 
 export const BottomContainer = styled.div`
+  //could potnetially remove this?
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 80%;
   height: 20%;
   background-color: green;
@@ -43,4 +47,18 @@ export const TipAmountContainer = styled.div`
 
 export const TotalContainer = styled.div`
   width: 100%;
+`;
+
+export const ResetButton = styled.button`
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 3rem;
+  border-radius: 0.3rem;
+  border: none;
+  padding: 1rem;
+  background-color: ${(props) =>
+    props.isSelected ? colors.neutral.selection : colors.neutral.selection};
 `;

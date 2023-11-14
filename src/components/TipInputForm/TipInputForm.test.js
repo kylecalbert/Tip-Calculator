@@ -25,19 +25,15 @@ describe('TipInputForm Component', () => {
     expect(setTip).toHaveBeenCalledWith(15);
   });
 
-  it('should disable the custum tip input field when a button is clicked', () => {
-    const { setTip } = renderTipInputForm();
-    const customTipInput = screen.getByPlaceholderText('Custom');
-    fireEvent.click(screen.getByText('10%'));
-    expect(setTip).toHaveBeenCalledWith(10);
-    expect(customTipInput).toBeDisabled();
-  });
-
   it('should update customTip to the custom value entered', () => {
-    const { setCustomTip } = renderTipInputForm();
+    const { setCustomTip, setTip } = renderTipInputForm();
     const customInput = screen.getByPlaceholderText('Custom');
     fireEvent.change(customInput, { target: { value: 25 } });
 
-    expect(setCustomTip).toHaveBeenCalledWith(25); ///not sure why this is not working?
+    //making sure the selected button tip overides the user input
+    expect(setCustomTip).toHaveBeenCalledWith(25);
+    fireEvent.click(screen.getByText('10%'));
+    expect(setTip).toHaveBeenCalledWith(10);
+    expect(setCustomTip).toHaveBeenCalledWith(0);
   });
 });

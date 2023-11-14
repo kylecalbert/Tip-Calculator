@@ -2,6 +2,7 @@ import React from 'react';
 
 import {
   BottomContainer,
+  ResetButton,
   SummaryContainer,
   TipInfoContainer,
   TopContainer,
@@ -21,7 +22,11 @@ export const Summary = () => {
         </TotalContainer>
       </TopContainer>
 
-      <BottomContainer></BottomContainer>
+      <BottomContainer>
+        <ResetButton>
+          <Text>Reset</Text>
+        </ResetButton>
+      </BottomContainer>
     </SummaryContainer>
   );
 };
