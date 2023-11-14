@@ -45,44 +45,42 @@ export const TipInputForm = () => {
   };
 
   return (
-    <TipCalculatorContainer>
-      <TipInputFormContainer>
-        <InputField
-          title="Bill"
-          placeholder="0"
-          type="number"
-          icon={dollarSign}
-        />
-        <SelectTipContainer>
-          <Text padding="0 0 10px 0" color={colors.neutral.darkGrayishCyan}>
-            Select Tip %
-          </Text>
-          <SelectTipGrid>
-            {tipPercentages.map((percentage) => (
-              <SelectTipItems
-                onClick={() => handleButtonClick(percentage)}
-                isSelected={tip === percentage}
-                key={percentage}
-              >
-                <Text size={sizes.small}>{percentage}%</Text>
-              </SelectTipItems>
-            ))}
-            <CustomTipInput
-              placeholder="Custom"
-              type="number"
-              onChange={(e) => handleOnChange(e)}
-              disabled={tip !== 0}
-            />
-          </SelectTipGrid>
-        </SelectTipContainer>
-        <InputField
-          placeholder="0"
-          title="Number of People"
-          type="number"
-          icon={personIcon}
-        />
-      </TipInputFormContainer>
-    </TipCalculatorContainer>
+    <TipInputFormContainer>
+      <InputField
+        title="Bill"
+        placeholder="0"
+        type="number"
+        icon={dollarSign}
+      />
+      <SelectTipContainer>
+        <Text padding="0 0 10px 0" color={colors.neutral.darkGrayishCyan}>
+          Select Tip %
+        </Text>
+        <SelectTipGrid>
+          {tipPercentages.map((percentage) => (
+            <SelectTipItems
+              onClick={() => handleButtonClick(percentage)}
+              isSelected={tip === percentage}
+              key={percentage}
+            >
+              <Text size={sizes.small}>{percentage}%</Text>
+            </SelectTipItems>
+          ))}
+          <CustomTipInput
+            placeholder="Custom"
+            type="number"
+            onChange={(e) => handleOnChange(e)}
+            disabled={tip !== 0}
+          />
+        </SelectTipGrid>
+      </SelectTipContainer>
+      <InputField
+        placeholder="0"
+        title="Number of People"
+        type="number"
+        icon={personIcon}
+      />
+    </TipInputFormContainer>
   );
 };
 
