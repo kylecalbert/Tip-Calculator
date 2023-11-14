@@ -40,13 +40,16 @@ export const SelectTipItems = styled.button`
   justify-content: center;
   width: 100%;
   height: 3rem;
-  background-color: ${colors.neutral.veryDarkCyan};
   border-radius: 0.3rem;
   border: none;
   padding: 1rem;
+  background-color: ${(props) =>
+    props.isSelected
+      ? colors.neutral.grayishCyan
+      : colors.neutral.veryDarkCyan};
 `;
 
-export const TipInput = styled.input`
+export const CustomTipInput = styled.input`
   display: flex;
 
   text-align: right;
@@ -55,7 +58,7 @@ export const TipInput = styled.input`
   width: 100%;
   height: 1rem;
   font-size: 1.2rem;
-  background-color: ${colors.neutral.veryLightGrayishCyan};
+
   border-radius: 0.3rem;
   border: none;
   padding: 1rem 0 1rem 0;
