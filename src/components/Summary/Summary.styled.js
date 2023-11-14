@@ -8,6 +8,10 @@ export const SummaryContainer = styled.div`
   width: 50%;
   background-color: ${colors.neutral.veryDarkCyan};
   border-radius: 1rem;
+  @media (max-width: 768px) {
+    width: 100%;
+    gap: 0;
+  }
 `;
 
 export const TopContainer = styled.div`

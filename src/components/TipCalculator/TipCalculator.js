@@ -11,6 +11,14 @@ export const TipCalculatorContainer = styled.div`
   height: 25rem;
   border-radius: 2rem;
   padding: 4rem;
+
+  @media (max-width: 768px) {
+    width: 30rem;
+    display: flex;
+    flex-direction: column;
+    height: 50rem;
+    align-items: center;
+  }
 `;
 
 const TipCalculator = () => {
