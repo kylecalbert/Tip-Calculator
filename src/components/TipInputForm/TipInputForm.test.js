@@ -26,19 +26,11 @@ describe('TipInputForm Component', () => {
     expect(setCustomTip).toHaveBeenCalledWith(0);
   });
 
-  it('should update customTip to the custom value entered and set tip value to 0', () => {
-    const { setCustomTip, setTip } = renderTipInputForm();
-    const customInput = screen.getByPlaceholderText('Custom');
-    fireEvent.change(customInput, { target: { value: 25 } });
-    expect(setCustomTip).toHaveBeenCalledWith(25);
-  });
-
   it('should call setCustomTip with entered value and call the tip with 0', () => {
     const { setCustomTip, setTip } = renderTipInputForm();
     const customInput = screen.getByPlaceholderText('Custom');
     fireEvent.change(customInput, { target: { value: 50 } });
     expect(setCustomTip).toHaveBeenCalledWith(50);
-
-    expect(setTip).toHaveBeenCalledWith(0);
+    expect(setTip).toHaveBeenCalledWith(0); ///why is this not being called?
   });
 });
