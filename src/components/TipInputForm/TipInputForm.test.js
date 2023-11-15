@@ -17,23 +17,28 @@ const renderTipInputForm = (props) => {
 };
 
 describe('TipInputForm Component', () => {
-  it('should update setTip to the button value clicked', () => {
-    const { setTip } = renderTipInputForm();
+  it('should call the setTip with selected value and call the setCustomTip with 0', () => {
+    const { setTip, setCustomTip } = renderTipInputForm();
     fireEvent.click(screen.getByText('10%'));
     expect(setTip).toHaveBeenCalledWith(10);
     fireEvent.click(screen.getByText('15%'));
     expect(setTip).toHaveBeenCalledWith(15);
+    expect(setCustomTip).toHaveBeenCalledWith(0);
   });
 
-  it('should update customTip to the custom value entered', () => {
+  it('should update customTip to the custom value entered and set tip value to 0', () => {
     const { setCustomTip, setTip } = renderTipInputForm();
     const customInput = screen.getByPlaceholderText('Custom');
     fireEvent.change(customInput, { target: { value: 25 } });
-
-    //making sure the selected button tip overides the user input
     expect(setCustomTip).toHaveBeenCalledWith(25);
-    fireEvent.click(screen.getByText('10%'));
-    expect(setTip).toHaveBeenCalledWith(10);
-    expect(setCustomTip).toHaveBeenCalledWith(0);
+  });
+
+  it('should call setCustomTip with entered value and call the tip with 0', () => {
+    const { setCustomTip, setTip } = renderTipInputForm();
+    const customInput = screen.getByPlaceholderText('Custom');
+    fireEvent.change(customInput, { target: { value: 50 } });
+    expect(setCustomTip).toHaveBeenCalledWith(50);
+
+    expect(setTip).toHaveBeenCalledWith(0);
   });
 });

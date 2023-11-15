@@ -9,8 +9,9 @@ import { Text } from '../Text/Text';
 import colors from '../colors/colors';
 import { TipCalculatorContext } from '../TipCalculatorContext/TipCalculatorContext';
 
-export const InputField = ({ title, type, icon }) => {
-  const { setBill, setNoOfPersons } = useContext(TipCalculatorContext);
+export const InputField = ({ title, type, icon, value }) => {
+  const { setBill, setNoOfPersons, noOfPersons } =
+    useContext(TipCalculatorContext);
 
   const [error, setError] = useState('');
 
@@ -24,7 +25,7 @@ export const InputField = ({ title, type, icon }) => {
       setNoOfPersons(inputValue);
     }
 
-    if (inputValue === '0') {
+    if (inputValue === 0) {
       setError('Cannot be Zero');
     } else {
       setError('');
@@ -50,6 +51,7 @@ export const InputField = ({ title, type, icon }) => {
         onChange={handleInputChange}
         error={Boolean(error)}
         data-testid="input-field"
+        value={value ? value : ''}
       />
     </StyledInputContainer>
   );

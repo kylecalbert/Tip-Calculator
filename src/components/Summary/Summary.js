@@ -15,8 +15,16 @@ import { tipPerPerson, totalPerPerson } from '../Calculations/Calculations';
 import { TipCalculatorContext } from '../TipCalculatorContext/TipCalculatorContext';
 
 export const Summary = () => {
-  const { bill, tip, noOfPersons, customTip } =
-    useContext(TipCalculatorContext);
+  const {
+    bill,
+    tip,
+    noOfPersons,
+    customTip,
+    setCustomTip,
+    setTip,
+    setBill,
+    setNoOfPersons,
+  } = useContext(TipCalculatorContext);
   const tipAmountPerPerson = tipPerPerson(tip, customTip, noOfPersons, bill);
   const totalAmountPerPerson = totalPerPerson(
     tip,
@@ -26,6 +34,14 @@ export const Summary = () => {
   );
 
   console.log(tipAmountPerPerson);
+
+  const handleReset = () => {
+    setCustomTip(0);
+    setTip(0);
+    setNoOfPersons(0);
+    setBill(0);
+  };
+
   return (
     <SummaryContainer>
       <TopContainer>
@@ -44,7 +60,7 @@ export const Summary = () => {
       </TopContainer>
 
       <BottomContainer>
-        <ResetButton>
+        <ResetButton data-testid="reset-button" onClick={handleReset}>
           <Text>Reset</Text>
         </ResetButton>
       </BottomContainer>

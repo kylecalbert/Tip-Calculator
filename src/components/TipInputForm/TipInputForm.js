@@ -18,7 +18,7 @@ export const TipInputForm = () => {
   const tipPercentages = [5, 10, 15, 20, 25]; ///adding an arrya so values can be dynamic and updated easily
   //previously i as adding mutliple tip grid items which used up lots of unnesary code space
 
-  const { customTip, setCustomTip, setTip, tip } =
+  const { customTip, setCustomTip, setTip, tip, noOfPersons, bill } =
     useContext(TipCalculatorContext);
 
   const handleButtonClick = (percentage) => {
@@ -43,6 +43,7 @@ export const TipInputForm = () => {
         placeholder="0"
         type="number"
         icon={dollarSign}
+        value={bill}
       />
       <SelectTipContainer>
         <Text padding="0 0 10px 0" color={colors.neutral.darkGrayishCyan}>
@@ -71,6 +72,7 @@ export const TipInputForm = () => {
         title="Number of People"
         type="number"
         icon={personIcon}
+        value={noOfPersons}
       />
     </TipInputFormContainer>
   );
