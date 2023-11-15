@@ -9,10 +9,12 @@ export const AppContainer = styled.div`
   background-color: red;
 
   height: 100vh;
+  width: 100vw;
 
   @media (max-width: 768px) {
     background-color: red;
     height: 100%;
+
     align-items: center;
   }
 `;

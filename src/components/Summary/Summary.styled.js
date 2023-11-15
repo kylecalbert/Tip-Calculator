@@ -8,11 +8,13 @@ export const SummaryContainer = styled.div`
   width: 100%;
   background-color: ${colors.neutral.veryDarkCyan};
   border-radius: 1rem;
+  margin-left: 2rem;
 
   @media (max-width: 768px) {
-    width: 90vw;
-    height: auto;
+    width: 100%;
+    height: 80%;
     gap: 0;
+    margin-left: 0rem;
   }
 `;
 
@@ -45,6 +47,9 @@ export const BottomContainer = styled.div`
   height: 20%;
   background-color: green;
   margin-top: 4.5rem;
+  @media (max-width: 768px) {
+    margin-top: 1.5rem;
+  }
 `;
 
 export const TipAmountContainer = styled.div`

@@ -12,11 +12,11 @@ export const TipCalculatorContainer = styled.div`
   border-radius: 2rem;
   padding: 4rem;
 
-  @media (max-width: 950px) {
+  @media (max-width: 960px) {
     display: flex;
-    /* flex-direction: column; */
-    width: 100%;
-    height: 100%;
+    flex-direction: column;
+    width: auto;
+    height: auto;
     align-items: center;
     padding: 1rem;
     margin-left: 1rem;

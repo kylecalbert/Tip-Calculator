@@ -44,7 +44,7 @@ export const IconContainer = styled.img`
   font-size: 25px;
   margin-top: 0.25rem;
   @media (max-width: 768px) {
-    top: 22.5%;
+    top: 36.5%;
     left: 10px;
   }
 `;
