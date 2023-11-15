@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
 import {
   BottomContainer,
@@ -11,14 +11,35 @@ import {
 
 import { Text } from '../Text/Text';
 import { TipInfo } from './TipInfo/TipInfo';
+import { tipPerPerson, totalPerPerson } from '../Calculations/Calculations';
+import { TipCalculatorContext } from '../TipCalculatorContext/TipCalculatorContext';
 
 export const Summary = () => {
+  const { bill, tip, noOfPersons, customTip } =
+    useContext(TipCalculatorContext);
+  const tipAmountPerPerson = tipPerPerson(tip, customTip, noOfPersons, bill);
+  const totalAmountPerPerson = totalPerPerson(
+    tip,
+    customTip,
+    noOfPersons,
+    bill
+  );
+
+  console.log(tipAmountPerPerson);
   return (
     <SummaryContainer>
       <TopContainer>
         <TotalContainer>
-          <TipInfo title1={'Tip Amount'} title2={'/ person'} />
-          <TipInfo title1={'Tip Amount'} title2={'/ person'} />
+          <TipInfo
+            title1={'Tip Amount'}
+            title2={'/ person'}
+            value={tipAmountPerPerson}
+          />
+          <TipInfo
+            title1={'Total Amount'}
+            title2={'/ person'}
+            value={totalAmountPerPerson}
+          />
         </TotalContainer>
       </TopContainer>
 

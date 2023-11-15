@@ -15,7 +15,7 @@ export const InputField = ({ title, type, icon }) => {
   const [error, setError] = useState('');
 
   const handleInputChange = (e) => {
-    const inputValue = e.target.value;
+    const inputValue = Number(e.target.value);
 
     if (title === 'Bill') {
       setBill(inputValue);

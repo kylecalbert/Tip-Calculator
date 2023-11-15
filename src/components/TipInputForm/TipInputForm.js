@@ -1,6 +1,5 @@
-import React, { useContext, useRef, useEffect } from 'react';
+import React, { useContext } from 'react';
 import {
-  TipCalculatorContainer,
   SelectTipContainer,
   SelectTipGrid,
   SelectTipItems,

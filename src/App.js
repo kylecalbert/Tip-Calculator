@@ -2,7 +2,6 @@ import './App.css';
 
 import { AppContainer } from './App.styled';
 import { TipCalculatorProvider } from './components/TipCalculatorContext/TipCalculatorContext';
-import { TipInputForm } from './components/TipInputForm/TipInputForm';
 import TipCalculator from './components/TipCalculator/TipCalculator';
 
 import { Text } from './components/Text/Text';
