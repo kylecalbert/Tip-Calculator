@@ -8,7 +8,7 @@ const renderTipInputForm = (props) => {
   const setTip = jest.fn();
 
   render(
-    <TipCalculatorContext.Provider value={{ setCustomTip, setTip, tip: 0 }}>
+    <TipCalculatorContext.Provider value={{ setCustomTip, setTip }}>
       <TipInputForm />
     </TipCalculatorContext.Provider>
   );
@@ -31,6 +31,6 @@ describe('TipInputForm Component', () => {
     const customInput = screen.getByPlaceholderText('Custom');
     fireEvent.change(customInput, { target: { value: 50 } });
     expect(setCustomTip).toHaveBeenCalledWith(50);
-    expect(setTip).toHaveBeenCalledWith(0); ///why is this not being called?
+    expect(setTip).toHaveBeenCalledWith(0);
   });
 });
