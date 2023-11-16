@@ -19,7 +19,6 @@ export const TipInfo = ({ title1, title2, value }) => {
         <Text>{title1}</Text>
         <Text size=".8rem">{title2}</Text>
       </TitleContainer>
-
       <Text size="2.5rem">${value}</Text>
     </TipInfoContainer>
   );

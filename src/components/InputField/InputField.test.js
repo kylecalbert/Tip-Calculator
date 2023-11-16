@@ -51,4 +51,15 @@ describe('InputField', () => {
     const errorMessage = screen.getByText('Cannot be Zero');
     expect(errorMessage).toBeInTheDocument();
   });
+
+  it('it should change the tip to the ', () => {
+    const { setBill } = renderInputField({
+      title: 'Bill',
+      type: 'number',
+      icon: 'dollarSign',
+    });
+    const billInput = screen.getByTestId('input-field');
+    fireEvent.change(billInput, { target: { value: 50 } });
+    expect(setBill).toHaveBeenCalledWith(50);
+  });
 });

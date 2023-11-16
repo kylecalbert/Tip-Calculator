@@ -49,7 +49,7 @@ export const TipInputForm = () => {
         <Text padding="0 0 10px 0" color={colors.neutral.darkGrayishCyan}>
           Select Tip %
         </Text>
-        <SelectTipGrid>
+        <SelectTipGrid data-testid="tip-buttons">
           {tipPercentages.map((percentage) => (
             <SelectTipItems
               onClick={() => handleButtonClick(percentage)}
@@ -64,6 +64,7 @@ export const TipInputForm = () => {
             type="number"
             onChange={(e) => handleOnChange(e)}
             value={customTip ? customTip : ''}
+            data-cy="customInput-cy-btn"
           />
         </SelectTipGrid>
       </SelectTipContainer>
