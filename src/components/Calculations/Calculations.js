@@ -8,7 +8,7 @@ export const tipPerPerson = (tip, customTip, noOfPersons, bill) => {
 
   // Checking if numberOfPeople is not 0 before performing the division
   const tipPerPerson = noOfPersons !== 0 ? (bill * userTip) / noOfPersons : 0;
-  const roundedTipPerPerson = tipPerPerson.toFixed(3);
+  const roundedTipPerPerson = tipPerPerson.toFixed(1);
 
   console.log('Tip Per Person:', tipPerPerson);
 
@@ -28,5 +28,5 @@ export const totalPerPerson = (tip, customTip, noOfPersons, bill) => {
 
   console.log('Tip Per Person:', tipPerPerson);
 
-  return totalPerPeron.toFixed(3);
+  return totalPerPeron.toFixed(1);
 };

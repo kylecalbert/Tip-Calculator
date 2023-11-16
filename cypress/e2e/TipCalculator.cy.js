@@ -3,8 +3,13 @@ describe('Tip Calculator', () => {
     cy.visit('http://localhost:3000/');
 
     cy.get('[data-cy=customInput-cy-btn]').type(10);
-    cy.get('input[placeholder="0"]').eq(0).type('100');
-    cy.get('input[placeholder="0"]').eq(1).type('2');
+    cy.get('input[placeholder="0"]').eq(0).type(100);
+    cy.get('input[placeholder="0"]').eq(1).type(2);
+    cy.get('[data-testid=tip-info-value]').eq(0).should('contain.text', '$5.0');
+
+    cy.get('[data-testid=tip-info-value]')
+      .eq(1)
+      .should('contain.text', '$55.0');
   });
 
   it('should click on the selected tip percentage and change background', () => {
@@ -42,5 +47,6 @@ describe('Tip Calculator', () => {
     cy.get('input[placeholder="0"]')
       .should('have.length', 2)
       .should('have.value', '');
+    cy.get('[data-testid=tip-info-value]').should('contain.text', '$0.0');
   });
 });
