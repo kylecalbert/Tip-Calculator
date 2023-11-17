@@ -1,12 +1,13 @@
 ///tip per person = bill amount x tip percentage / number of people
 
 export const tipPerPerson = (tip, customTip, noOfPersons, bill) => {
-  if (noOfPersons === 0 || tip === 0) {
+  if (noOfPersons === 0) {
     return 0;
   }
 
   console.log('Inputs:', { tip, customTip, noOfPersons, bill });
-  const userTip = tip / 100;
+
+  const userTip = customTip !== 0 ? customTip / 100 : tip / 100;
 
   console.log('User Tip:', userTip);
 
@@ -22,7 +23,6 @@ export const tipPerPerson = (tip, customTip, noOfPersons, bill) => {
 
 export const totalPerPerson = (tip, customTip, noOfPersons, bill) => {
   if (noOfPersons === 0) {
-    console.log('Invalid input: numberOfPeople must be greater than 0.');
     return 0;
   }
 
