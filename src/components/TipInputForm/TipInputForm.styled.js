@@ -6,7 +6,7 @@ export const TipInputFormContainer = styled.div`
   grid-template-rows: repeat(3, 1fr);
   gap: 2.5rem;
   width: 90%;
-  background-color: yellow;
+  /* background-color: yellow; */
   padding: 0 16px 2px 2px;
 
   @media (max-width: 768px) {
@@ -28,7 +28,7 @@ export const SelectTipGrid = styled.div`
   gap: 10px;
   width: 100%;
 
-  background-color: green;
+  /* background-color: green; */
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
   }

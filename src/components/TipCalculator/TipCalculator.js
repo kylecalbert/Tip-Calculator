@@ -6,7 +6,7 @@ import { Summary } from '../Summary/Summary';
 export const TipCalculatorContainer = styled.div`
   display: flex;
 
-  background: blue;
+  background: ${colors.neutral.white};
   width: 50rem;
   height: 25rem;
   border-radius: 2rem;

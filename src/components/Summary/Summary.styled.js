@@ -23,7 +23,7 @@ export const TopContainer = styled.div`
   flex-direction: column;
   width: 80%;
   height: 50%;
-  background-color: red;
+  /* background-color: red; */
   margin-top: 2rem;
 `;
 
@@ -45,7 +45,7 @@ export const BottomContainer = styled.div`
   justify-content: center;
   width: 80%;
   height: 20%;
-  background-color: green;
+  /* background-color: green; */
   margin-top: 4.5rem;
   @media (max-width: 768px) {
     margin-top: 1.5rem;

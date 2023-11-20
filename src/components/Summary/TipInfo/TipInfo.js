@@ -15,7 +15,7 @@ export const TitleContainer = styled.div`
 export const TipInfo = ({ title1, title2, value }) => {
   return (
     <TipInfoContainer>
-      <TitleContainer data-testid="tip-info-container">
+      <TitleContainer>
         <Text>{title1}</Text>
         <Text size=".8rem">{title2}</Text>
       </TitleContainer>
