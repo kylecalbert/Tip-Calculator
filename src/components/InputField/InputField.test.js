@@ -24,8 +24,8 @@ describe('InputField', () => {
       icon: 'dollarSign',
     });
     const billInput = screen.getByTestId('input-field');
-    fireEvent.change(billInput, { target: { value: '50' } });
-    expect(setBill).toHaveBeenCalledWith('50');
+    fireEvent.change(billInput, { target: { value: 50 } });
+    expect(setBill).toHaveBeenCalledWith(50);
   });
 
   it('should call setNoOfPersons when the person input field is changed', () => {
@@ -35,8 +35,8 @@ describe('InputField', () => {
       icon: 'personIcon',
     });
     const personInput = screen.getByTestId('input-field');
-    fireEvent.change(personInput, { target: { value: '2' } });
-    expect(setNoOfPersons).toHaveBeenCalledWith('2');
+    fireEvent.change(personInput, { target: { value: 2 } });
+    expect(setNoOfPersons).toHaveBeenCalledWith(2);
   });
 
   it('should display error message when person or bill is set to zero', () => {
@@ -47,8 +47,19 @@ describe('InputField', () => {
     });
 
     const personInput = screen.getByTestId('input-field');
-    fireEvent.change(personInput, { target: { value: '0' } });
+    fireEvent.change(personInput, { target: { value: 0 } });
     const errorMessage = screen.getByText('Cannot be Zero');
     expect(errorMessage).toBeInTheDocument();
+  });
+
+  it('it should change the tip to the ', () => {
+    const { setBill } = renderInputField({
+      title: 'Bill',
+      type: 'number',
+      icon: 'dollarSign',
+    });
+    const billInput = screen.getByTestId('input-field');
+    fireEvent.change(billInput, { target: { value: 50 } });
+    expect(setBill).toHaveBeenCalledWith(50);
   });
 });

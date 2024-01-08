@@ -8,6 +8,7 @@ const colors = {
     lightGrayishCyan: 'hsl(185, 41%, 84%)',
     veryLightGrayishCyan: 'hsl(189, 41%, 97%)',
     white: 'hsl(0, 0%, 100%)',
+    selection: 'hsl(168, 68%, 77%)',
   },
 };
 

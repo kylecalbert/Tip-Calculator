@@ -1,37 +1,37 @@
 import styled from 'styled-components';
 import colors from '../colors/colors';
 
-export const BillContainer = styled.div`
-  display: flex;
-  background: ${colors.neutral.white};
-  width: 50rem;
-
-  height: 25rem;
-  border-radius: 2rem;
-  padding: 4rem;
-`;
-
-export const BillSelectionContainer = styled.div`
+export const TipInputFormContainer = styled.div`
   display: grid;
-
   grid-template-rows: repeat(3, 1fr);
   gap: 2.5rem;
-  width: 50%;
+  width: 90%;
   /* background-color: yellow; */
   padding: 0 16px 2px 2px;
+
+  @media (max-width: 768px) {
+    width: 90%;
+    gap: 1.5rem;
+    height: 30rem;
+  }
 `;
 
 export const SelectTipContainer = styled.div`
   display: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 export const SelectTipGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
+  width: 100%;
 
   /* background-color: green; */
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const SelectTipItems = styled.button`
